@@ -1,8 +1,10 @@
   /* listes des cards */  
 import React from 'react'
 import { Rating } from '@mui/material'
-import { Card, Col, Row } from 'react-bootstrap'/* 
-function Movilist ona passer comme parametres les data movis des films */
+import { Card, Col, Row } from 'react-bootstrap'
+import { Link } from "react-router-dom";
+
+/* function Movilist ona passer comme parametres les data movis des films */
 const MovieList = ({dataMovie}) => {
   return (
     <div style={{display:'grid', gridTemplateColumns: 'auto auto auto',gap: '10px',justifyContent:'space-evenly'}}>
@@ -17,6 +19,9 @@ const MovieList = ({dataMovie}) => {
                 {movie.description}
               </Card.Text>
               <Rating max={10} name="read-only" value={movie.rating} readOnly />
+              <Card.Text>
+              <Card.Link as={Link} to={`/MovieList/${movie.id}`}>Read More</Card.Link>
+              </Card.Text>
             </Card.Body>
           </Card>
         </Col>

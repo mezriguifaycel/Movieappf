@@ -15,6 +15,9 @@ const MovieCard = ({data}) => {
                 {data.description}
               </Card.Text>
               <Rating max={10} name="read-only" value={data.rating} readOnly />
+              <Card.Text>
+                {data. trailerUrl}
+              </Card.Text>
             </Card.Body>
           </Card>
         </Col>
